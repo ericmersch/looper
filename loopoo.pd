@@ -1,0 +1,40 @@
+#N canvas 60 27 1860 984 12;
+#X obj 833 301 writesf~ 2;
+#X msg 831 150 open recording.wav;
+#X msg 843 196 start;
+#X msg 902 196 stop;
+#X obj 833 259 catch~ left;
+#X obj 938 253 catch~ right;
+#X obj 695 19 tgl 40 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 845 64 sel 1;
+#X obj 829 107 t b b;
+#X obj 696 159 bng 40 250 50 0 button2 empty empty 17 7 0 10 #00ff04
+#000000 #000000;
+#X obj 695 88 bng 40 250 50 0 button1 empty empty 17 7 0 10 #faff00
+#000000 #000000;
+#X obj 698 389 bng 40 250 50 0 toggle2 empty empty 17 7 0 10 #9c00ff
+#0400ff #000000;
+#X obj 698 233 vsl 40 128 0 1 0 0 slider1 empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 880 431 / 127;
+#X floatatom 880 456 5 0 0 0 - - - 0;
+#X obj 881 399 ctlin 7 16;
+#X obj 0 0 loop foo1.wav 1 16 20 12;
+#X obj 160 0 loop foo2.wav 2 17 23 13;
+#X obj 320 0 loop foo3.wav 4 18 21 14;
+#X obj 480 0 loop foo4.wav 5 19 22 15;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 1;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 7 1 3 0;
+#X connect 8 0 2 0;
+#X connect 8 1 1 0;
+#X connect 13 0 12 0;
+#X connect 13 0 14 0;
+#X connect 15 0 13 0;
+#X coords 0 -1 1 1 800 600 2 0 0;
